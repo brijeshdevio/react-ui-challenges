@@ -1,16 +1,16 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Navbar } from "@/components/layout";
-import { Home, IosPopup } from "@/pages";
+import { BaseLayout } from "@/layouts";
+import { Home } from "@/pages";
 import "@/App.css";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        {/* <Navbar /> */}
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/ios-popup" element={<IosPopup />} />
+          <Route element={<BaseLayout />}>
+            <Route path="/" element={<Home />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
